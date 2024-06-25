@@ -9,5 +9,4 @@ public class PbAbrilDes3JoaoVictorNevesApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PbAbrilDes3JoaoVictorNevesApplication.class, args);
 	}
-
 }

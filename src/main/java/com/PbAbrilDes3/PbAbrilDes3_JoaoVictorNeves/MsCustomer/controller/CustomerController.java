@@ -1,6 +1,7 @@
 package com.PbAbrilDes3.PbAbrilDes3_JoaoVictorNeves.MsCustomer.controller;
 
 import com.PbAbrilDes3.PbAbrilDes3_JoaoVictorNeves.MsCustomer.entity.Customer;
+import com.PbAbrilDes3.PbAbrilDes3_JoaoVictorNeves.MsCustomer.exception.ResourceNotFoundException;
 import com.PbAbrilDes3.PbAbrilDes3_JoaoVictorNeves.MsCustomer.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

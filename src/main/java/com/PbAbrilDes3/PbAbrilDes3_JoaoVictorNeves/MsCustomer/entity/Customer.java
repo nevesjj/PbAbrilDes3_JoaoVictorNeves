@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 @Getter @Setter @NoArgsConstructor
 @Entity
-@Table (name = "")
+@Table (name = "customer")
 public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

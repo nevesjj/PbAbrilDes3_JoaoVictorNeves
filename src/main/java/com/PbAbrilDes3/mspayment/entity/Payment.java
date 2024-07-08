@@ -23,7 +23,7 @@ public class Payment {
     @Column(name = "categoryId", nullable = false)
     private Long categoryId;
     //@Column(name = "category", nullable = false)
-    //private String categorys;
+    //private String category;
     @Column(name = "total", nullable = false)
     private double total;
     @Column(name = "created_date", updatable = false)

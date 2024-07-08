@@ -1,13 +1,13 @@
 # PbAbrilDes3_JoaoVictorNeves
 
 # Visão geral do projeto
-O projeto implementa as seguintes funcionalidades:
-Cadastro na tabela customer.
-Uso de bancos de dados da AWS.
-Cadastro de produtos.
-Cadastro de pagamento.
-Uso de RabbitMQ.
-Arquitetura de MicroServices.
+📌O projeto implementa as seguintes funcionalidades:
+📌Cadastro na tabela customer.
+📌Uso de bancos de dados da AWS.
+📌Cadastro de produtos.
+📌Cadastro de pagamento.
+📌Uso de RabbitMQ.
+📌Arquitetura de MicroServices.
 
 # MicroServices
 📌Ms customer foi desenvolvido na porta 8082.

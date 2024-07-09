@@ -2,9 +2,9 @@
 
 # Visão geral do projeto
 📌O projeto implementa as seguintes funcionalidades:
-📌Cadastro na tabela customer.
+📌Cadastro de usuario.
 📌Uso de bancos de dados da AWS.
-📌Cadastro de produtos.
+📌Cadastro de categoria de produtos.
 📌Cadastro de pagamento.
 📌Uso de RabbitMQ.
 📌Arquitetura de MicroServices.

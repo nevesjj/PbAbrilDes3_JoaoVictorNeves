@@ -1,6 +1,9 @@
 package com.PbAbrilDes3.mspayment.controller;
 
+import com.PbAbrilDes3.mspayment.dto.CustomerPointsDto;
+import com.PbAbrilDes3.mspayment.dto.PaymentRequest;
 import com.PbAbrilDes3.mspayment.entity.Payment;
+import com.PbAbrilDes3.mspayment.service.PaymentRbMqService;
 import com.PbAbrilDes3.mspayment.service.PaymentService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +19,15 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
+    @Autowired
+    private PaymentRbMqService paymentRbMqService;
+
     @PostMapping
-    public ResponseEntity<Payment> createPayment(@Valid @RequestBody Payment payment) {
-        Payment savedPayment = paymentService.createPayment(payment);
+    public ResponseEntity<Payment> createPayment(@Valid @RequestBody PaymentRequest paymentRequest) {
+        //TODO validar se o customerId existe dentro do mscustomer se nao existir devolver um erro
+        Payment savedPayment = paymentService.createPayment(paymentRequest);
+        //TODO fazer a chamada do calculate e buscar o total
+        paymentRbMqService.updatePoints(new CustomerPointsDto(paymentRequest.getCustomerId(), 10));
         return ResponseEntity.status(201).body(savedPayment);
     }
 
@@ -28,7 +37,7 @@ public class PaymentController {
         return ResponseEntity.ok(payment);
     }
 
-    @GetMapping("/user/{customerId}")
+    @GetMapping("/customer/{customerId}")
     public ResponseEntity<List<Payment>> getPaymentsByCustomerId(@PathVariable Long customerId) {
         List<Payment> payments = paymentService.getPaymentsByCustomerId(customerId);
         return ResponseEntity.ok(payments);

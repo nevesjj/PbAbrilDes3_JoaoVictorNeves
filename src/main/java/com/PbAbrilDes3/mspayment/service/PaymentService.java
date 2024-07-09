@@ -1,5 +1,6 @@
 package com.PbAbrilDes3.mspayment.service;
 
+import com.PbAbrilDes3.mspayment.dto.PaymentRequest;
 import com.PbAbrilDes3.mspayment.entity.Payment;
 import com.PbAbrilDes3.mspayment.exception.ResourceNotFoundException;
 import com.PbAbrilDes3.mspayment.repository.PaymentRepository;
@@ -15,7 +16,11 @@ public class PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;
 
-    public Payment createPayment(Payment payment) {
+    public Payment createPayment(PaymentRequest paymentRequest) {
+        var payment = new Payment();
+        payment.setCategoryId(paymentRequest.getCategoryId());
+        payment.setCustomerId(paymentRequest.getCustomerId());
+        payment.setTotal(paymentRequest.getCustomerId());
         return paymentRepository.save(payment);
     }
 

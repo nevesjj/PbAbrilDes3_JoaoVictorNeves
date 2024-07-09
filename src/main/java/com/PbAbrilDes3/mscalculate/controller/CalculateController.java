@@ -21,16 +21,19 @@ public class CalculateController {
         Calculate savedCalculate = calculateService.createCalculate(calculate);
         return ResponseEntity.status(201).body(savedCalculate);
     }
+
     @GetMapping
     public List<Calculate> getAllCalculates() {
         return calculateService.getAllCalculates();
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<Calculate> getCalculateById(@PathVariable Long id) {
         return calculateService.getCalculateById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.status(404).body(null));
     }
+
     @PutMapping("/{id}")
     public ResponseEntity<Calculate> updateCalculate(@PathVariable Long id, @RequestBody Calculate calculateDetails) {
         try {
@@ -40,6 +43,7 @@ public class CalculateController {
             return ResponseEntity.status(404).body(null);
         }
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCalculate(@PathVariable Long id) {
         calculateService.deleteCalculate(id);

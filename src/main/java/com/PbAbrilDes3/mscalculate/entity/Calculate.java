@@ -7,7 +7,9 @@ import lombok.Setter;
 
 import java.io.Serializable;
 
-@Getter @Setter @NoArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "rules")
 public class Calculate implements Serializable {
@@ -15,7 +17,7 @@ public class Calculate implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "category", nullable = false)
+    @Column(name = "category", nullable = false, unique = true)
     private String category;
     @Column(name = "parity", nullable = false)
     private int parity;
